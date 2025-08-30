@@ -11,28 +11,10 @@ function simulateKeypress(command) {
   let keyDownEvent;
 
   switch (command) {
-    case 'play-pause':
-      // keyDownEvent = new KeyboardEvent('keydown', {
-      //   key: ' ',
-      //   keyCode: 32,
-      //   bubbles: true,
-      // });
-      video.paused ? video.play() : video.pause();
-      break;
     case 'seek-forward':
-      // keyDownEvent = new KeyboardEvent('keydown', {
-      //   key: 'ArrowRight',
-      //   keyCode: 39,
-      //   bubbles: true,
-      // });
       if (video) video.currentTime += 5;
       break;
     case 'seek-backward':
-      // keyDownEvent = new KeyboardEvent('keydown', {
-      //   key: 'ArrowLeft',
-      //   keyCode: 37,
-      //   bubbles: true,
-      // });
       if (video) video.currentTime -= 5;
       break;
   }
