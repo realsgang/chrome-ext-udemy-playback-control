@@ -17,24 +17,19 @@
     "commands": {
       "seek-backward": {
         "suggested_key": {
-          "default": "Ctrl+Shift+1",
-          "mac": "Command+Shift+1"
+          "default": "Ctrl+Shift+Left",
+          "mac": "Command+Shift+Left"
         },
-        "description": "Seek Backward"
-      },
-      "play-pause": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+2",
-          "mac": "Command+Shift+2"
-        },
-        "description": "Play/Pause Video"
+        "description": "Seek Backward",
+        "global": true
       },
       "seek-forward": {
         "suggested_key": {
-          "default": "Ctrl+Shift+0",
-          "mac": "Command+Shift+0"
+          "default": "Ctrl+Shift+Right",
+          "mac": "Command+Shift+Right"
         },
-        "description": "Seek Forward"
+        "description": "Seek Forward",
+        "global": true
       }
     }    
   }
