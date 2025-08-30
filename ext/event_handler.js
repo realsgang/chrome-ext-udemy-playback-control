@@ -8,6 +8,7 @@ chrome.runtime.onMessage.addListener(
 
 function simulateKeypress(command) {
   let keyDownEvent;
+  const video = document.querySelector("video");
   switch (command) {
     case 'play-pause':
       keyDownEvent = new KeyboardEvent('keydown', {
@@ -17,18 +18,20 @@ function simulateKeypress(command) {
       });
       break;
     case 'seek-forward':
-      keyDownEvent = new KeyboardEvent('keydown', {
-        key: 'ArrowRight',
-        keyCode: 39,
-        bubbles: true,
-      });
+      // keyDownEvent = new KeyboardEvent('keydown', {
+      //   key: 'ArrowRight',
+      //   keyCode: 39,
+      //   bubbles: true,
+      // });
+      if (video) video.currentTime += 5;
       break;
     case 'seek-backward':
-      keyDownEvent = new KeyboardEvent('keydown', {
-        key: 'ArrowLeft',
-        keyCode: 37,
-        bubbles: true,
-      });
+      // keyDownEvent = new KeyboardEvent('keydown', {
+      //   key: 'ArrowLeft',
+      //   keyCode: 37,
+      //   bubbles: true,
+      // });
+      if (video) video.currentTime -= 5;
       break;
   }
 
