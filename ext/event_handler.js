@@ -7,15 +7,17 @@ chrome.runtime.onMessage.addListener(
 );
 
 function simulateKeypress(command) {
-  let keyDownEvent;
   const video = document.querySelector("video");
+  let keyDownEvent;
+
   switch (command) {
     case 'play-pause':
-      keyDownEvent = new KeyboardEvent('keydown', {
-        key: ' ',
-        keyCode: 32,
-        bubbles: true,
-      });
+      // keyDownEvent = new KeyboardEvent('keydown', {
+      //   key: ' ',
+      //   keyCode: 32,
+      //   bubbles: true,
+      // });
+      video.paused ? video.play() : video.pause();
       break;
     case 'seek-forward':
       // keyDownEvent = new KeyboardEvent('keydown', {
@@ -35,5 +37,8 @@ function simulateKeypress(command) {
       break;
   }
 
-  document.getElementsByTagName('div')[0].dispatchEvent(keyDownEvent);
+  // keyDownEvent가 생성된 경우에만 dispatch
+  if (keyDownEvent) {
+    document.dispatchEvent(keyDownEvent);
+  }
 }
